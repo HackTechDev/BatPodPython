@@ -9,86 +9,58 @@ import termios
 import bluetooth
 import time
 import  evdev
-#from evdev import InputDevice, categorize, ecodes
 from Tkinter import *
 
 sock = bluetooth.BluetoothSocket( bluetooth.RFCOMM )
 
 def eventInfo(eventName, char, keysym, ctrl, shift):
     msg = "[" + char + "] " 
-    if char == "z":
+    if char == "8":
         msg += "Avancer Droit"
-	sock.send('z')
-	time.sleep(0.5);
-    elif char == "s":
-        msg += "Reculer Droit"
-	sock.send('s')
-	time.sleep(0.5);
-    elif char == "q":
-        msg += "Tourner Gauche"
-	sock.send('q')
-        time.sleep(0.5);
-    elif char == "d":
-        msg += "Tourner Droite"
-	sock.send('d')
-        time.sleep(0.5);
-    elif char == "b":
-        msg += "Bluetooth"
-	sock.send('b')
-        time.sleep(0.5);
-
-    if char == "1":
-        msg += "Servo 1"
-	sock.send('1')
-	time.sleep(0.5);
-    elif char == "2":
-        msg += "Servo 2"
-	sock.send('2')
-	time.sleep(0.5);
-    elif char == "3":
-        msg += "Servo 3"
-	sock.send('3')
-        time.sleep(0.5);
-
-    if char == "4":
-        msg += "Servo 4"
-	sock.send('4')
-	time.sleep(0.5);
-    elif char == "5":
-        msg += "Servo 5"
-	sock.send('5')
-	time.sleep(0.5);
-    elif char == "6":
-        msg += "Servo 6"
-	sock.send('6')
-        time.sleep(0.5);
-
-    if char == "7":
-        msg += "Servo 7"
-	sock.send('7')
-	time.sleep(0.5);
-    elif char == "8":
-        msg += "Servo 8"
 	sock.send('8')
 	time.sleep(0.5);
+    elif char == "2":
+        msg += "Reculer Droit"
+	sock.send('2')
+	time.sleep(0.5);
+    elif char == "7":
+        msg += "Tourner Gauche"
+	sock.send('7')
+        time.sleep(0.5);
     elif char == "9":
-        msg += "Servo 9"
+        msg += "Tourner Droite"
 	sock.send('9')
         time.sleep(0.5);
-
-    if char == "y":
-        msg += "Servo y"
-	sock.send('y')
+    if char == "1":
+        msg += "Reculer Gauche"
+	sock.send('1')
 	time.sleep(0.5);
-    elif char == "h":
-        msg += "Servo h"
-	sock.send('h')
+    elif char == "3":
+        msg += "Reculer Droit"
+	sock.send('3')
 	time.sleep(0.5);
-    elif char == "n":
-        msg += "Servo n"
-	sock.send('n')
+    elif char == "5":
+        msg += "Stop"
+	sock.send('5')
         time.sleep(0.5);
 
+
+    if char == "a":
+        msg += "Vitesse 64"
+	sock.send('a')
+	time.sleep(0.5);
+    elif char == "z":
+        msg += "Vitesse 128"
+	sock.send('z')
+	time.sleep(0.5);
+    elif char == "e":
+        msg += "Vitesse 196"
+	sock.send('z')
+        time.sleep(0.5);
+    elif char == "r":
+        msg += "Vitesse 255"
+	sock.send('r')
+        time.sleep(0.5);
     else:
 	msg += "Inconnu"	
 
@@ -122,13 +94,13 @@ def init(canvas):
     redrawAll(canvas)
 
 def run():
-
+    # Mettre adresse Bluetooth du BatPod
     bd_addr = "00:18:A1:12:16:C5"
     port = 1
     sock.connect((bd_addr, port))
     
     root = Tk()
-    root.title("Controleur BatCar")
+    root.title("Controleur BatPod")
     canvas = Canvas(root, width=800, height=200)
     canvas.pack()
     root.canvas = canvas.canvas = canvas
