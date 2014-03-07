@@ -1,0 +1,39 @@
+Interface de commande pour BatPod
+=================================
+
+Distribution : Raspbian 24/09/13
+
+1) Installation du Bluetooth : 
+
+http://framboisepi.fr/?s=bluetooth&search=
+
+2) Répertoire de travail : 
+
+pi@framboisepi ~ $ mkdir -p ARDUINO/BatPodPython
+pi@framboisepi ~ $ cd ARDUINO/BatPodPython/
+
+3) Installation des paquetages : 
+
+pi@framboisepi ~/ARDUINO/BatPodPython $ sudo apt-get install python-pip python-dev
+pi@framboisepi ~/ARDUINO/BatPodPython $ sudo pip install evdev
+
+4) Redémarrer le Raspberry Pi.
+
+5) Dans l'application Périphérique Bluetooth" Enlever le périphérique BatPod détecté 
+
+6) Lancer l'application : 
+
+pi@framboisepi ~/ARDUINO/BatPodPython $ ./lancerBatPod.sh 
+
+7) Mouvement : 
+
+Touches de mouvement :
+
+z = Avancer tout droit
+s = Reculer tout droit
+q = Tourner à gauche
+d = Tourner à droite
+b = Arrêter 
+
+
+
