@@ -44,6 +44,23 @@ def eventInfo(eventName, char, keysym, ctrl, shift):
 	sock.send('5')
         time.sleep(0.5);
 
+    if char == "q":
+        msg += "Servo Gauche Lever"
+	sock.send('q')
+	time.sleep(0.5);
+    elif char == "s":
+        msg += "Servo Gauche Descendre"
+	sock.send('s')
+	time.sleep(0.5);
+    elif char == "w":
+        msg += "Servo Droit Lever"
+	sock.send('w')
+        time.sleep(0.5);
+    elif char == "x":
+        msg += "Servo Droit Descendre"
+	sock.send('x')
+        time.sleep(0.5);
+
 
     if char == "a":
         msg += "Vitesse 64"
@@ -62,7 +79,7 @@ def eventInfo(eventName, char, keysym, ctrl, shift):
 	sock.send('r')
         time.sleep(0.5);
     else:
-	msg += "Inconnu"	
+	msg += ""	
 
     return msg
 
