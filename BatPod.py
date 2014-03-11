@@ -45,19 +45,19 @@ def eventInfo(eventName, char, keysym, ctrl, shift):
         time.sleep(0.5);
 
     if char == "q":
-        msg += "Servo Gauche Lever"
+        msg += "Servo Gauche Avant"
 	sock.send('q')
 	time.sleep(0.5);
     elif char == "s":
-        msg += "Servo Gauche Descendre"
+        msg += "Servo Gauche Arriere"
 	sock.send('s')
 	time.sleep(0.5);
     elif char == "w":
-        msg += "Servo Droit Lever"
+        msg += "Servo Droit Avant"
 	sock.send('w')
         time.sleep(0.5);
     elif char == "x":
-        msg += "Servo Droit Descendre"
+        msg += "Servo Droit Arriere"
 	sock.send('x')
         time.sleep(0.5);
 
