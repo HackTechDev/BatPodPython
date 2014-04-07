@@ -35,5 +35,15 @@ q = Tourner à gauche
 d = Tourner à droite
 b = Arrêter 
 
+      +-Baisser             +-Baisser
+      |  +-Lever            |  +-Lever
+      |  |                  |  | 
+
+      d  f    D6       D8   c  v        <---- Touche
+      3  4                  7  8        <---- IR
+
+
+      q  s    D5       D7   w  x        <---- Touche
+      1  2                  5  6        <---- IR
 
 

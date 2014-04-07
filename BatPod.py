@@ -17,69 +17,87 @@ def eventInfo(eventName, char, keysym, ctrl, shift):
     msg = "[" + char + "] " 
     if char == "8":
         msg += "Avancer Droit"
-	sock.send('8')
-	time.sleep(0.5);
+        sock.send('8')
+        time.sleep(0.5);
     elif char == "2":
         msg += "Reculer Droit"
-	sock.send('2')
-	time.sleep(0.5);
+        sock.send('2')
+        time.sleep(0.5);
     elif char == "7":
         msg += "Tourner Gauche"
-	sock.send('7')
+        sock.send('7')
         time.sleep(0.5);
     elif char == "9":
         msg += "Tourner Droite"
-	sock.send('9')
+        sock.send('9')
         time.sleep(0.5);
     if char == "1":
         msg += "Reculer Gauche"
-	sock.send('1')
-	time.sleep(0.5);
+        sock.send('1')
+        time.sleep(0.5);
     elif char == "3":
         msg += "Reculer Droit"
-	sock.send('3')
-	time.sleep(0.5);
+        sock.send('3')
+        time.sleep(0.5);
     elif char == "5":
         msg += "Stop"
-	sock.send('5')
+        sock.send('5')
         time.sleep(0.5);
 
     if char == "q":
-        msg += "Servo Gauche Avant"
-	sock.send('q')
-	time.sleep(0.5);
+        msg += "Servo arriere-bras gauche baisser"
+        sock.send('q')
+        time.sleep(0.5);
     elif char == "s":
-        msg += "Servo Gauche Arriere"
-	sock.send('s')
-	time.sleep(0.5);
-    elif char == "w":
-        msg += "Servo Droit Avant"
-	sock.send('w')
+        msg += "Servo arriere-bras gauche lever"
+        sock.send('s')
+        time.sleep(0.5);
+    elif char == "d":
+        msg += "Servo avant-bras gauche baisser"
+        sock.send('d')
+        time.sleep(0.5);
+    elif char == "f":
+        msg += "Servo avant-bras gauche lever"
+        sock.send('f')
+        time.sleep(0.5);
+
+    if char == "w":
+        msg += "Servo arriere-bras droit baisser"
+        sock.send('w')
         time.sleep(0.5);
     elif char == "x":
-        msg += "Servo Droit Arriere"
-	sock.send('x')
+        msg += "Servo arriere-bras droit lever"
+        sock.send('w')
         time.sleep(0.5);
+    elif char == "c":
+        msg += "Servo avant-bras droit baisser"
+        sock.send('c')
+        time.sleep(0.5);
+    elif char == "v":
+        msg += "Servo avant-bras droit lever"
+        sock.send('v')
+        time.sleep(0.5);
+
 
 
     if char == "a":
         msg += "Vitesse 64"
-	sock.send('a')
-	time.sleep(0.5);
+        sock.send('a')
+        time.sleep(0.5);
     elif char == "z":
         msg += "Vitesse 128"
-	sock.send('z')
-	time.sleep(0.5);
+        sock.send('z')
+        time.sleep(0.5);
     elif char == "e":
         msg += "Vitesse 196"
-	sock.send('z')
+        sock.send('z')
         time.sleep(0.5);
     elif char == "r":
         msg += "Vitesse 255"
-	sock.send('r')
+        sock.send('r')
         time.sleep(0.5);
     else:
-	msg += ""	
+        msg += ""   
 
     return msg
 
